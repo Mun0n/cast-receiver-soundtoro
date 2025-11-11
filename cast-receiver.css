@@ -1,11 +1,12 @@
-/* Fondo siempre negro */
+/* Fondo negro */
 .background{
   background:#000;
   background-image:none;
 }
 
-/* Logo en idle */
-.logo,.splash{
+/* Logo centrado SOLO en idle/splash */
+.logo,
+.splash{
   background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
   background-repeat:no-repeat;
   background-position:center center;
@@ -13,9 +14,22 @@
   background-color:#000;
 }
 
+/* --- WATERMARK SOLO EN AUDIO --- */
+/* Por defecto, oculto en todas partes */
 .watermark{
-  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
-  background-size: 57px 57px;                      /* no interfiere con UI */
+  background-image:none !important;
+}
+
+/* Cuando el receptor indica AUDIO + estado del player, lo activamos */
+.audio.player-state-playing .watermark,
+.audio.player-state-paused .watermark,
+.audio.player-state-buffering .watermark{
+  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png") !important;
+  background-repeat:no-repeat !important;
+  background-size:57px 57px !important;         /* ajusta si lo quieres más grande */
+  background-position:right 5% center !important;/* derecha, centrado vertical */
+  opacity:.22 !important;
+  pointer-events:none;
 }
 
 /* Color de progreso */
