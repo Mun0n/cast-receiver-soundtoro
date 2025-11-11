@@ -13,16 +13,9 @@
   background-color:#000;
 }
 
-/* --- LOGO DURANTE REPRODUCCIÓN (watermark) --- */
-/* Forzamos que exista y se vea, colocado a la derecha */
 .watermark{
-  display:block !important;                 /* por si viene oculto */
-  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png") !important;
-  background-repeat:no-repeat !important;
-  background-position:right 5% center !important;  /* derecha, centrado vertical */
-  background-size:18% !important;                  /* ajusta 15–22% a tu gusto */
-  opacity:.22 !important;                          /* discreto */
-  pointer-events:none;                             /* no interfiere con UI */
+  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
+  background-size: 57px 57px;                      /* no interfiere con UI */
 }
 
 /* Color de progreso */
