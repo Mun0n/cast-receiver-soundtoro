@@ -1,0 +1,33 @@
+/* Fondo general del receiver */
+.background {
+    /* pantalla negra sólida */
+    background-color: #000000;
+    background-image: none; /* por si heredase algo */
+  }
+  
+  /* Logo que se muestra al arrancar / estado idle */
+  .logo {
+    background-image: url("https://tudominio.com/assets/soundtoro-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;   /* que entre completo sin recortar */
+  }
+  
+  /* (Opcional) Pantalla de "splash" si quieres forzar que SIEMPRE se vea tu logo en idle */
+  .splash {
+    background-image: url("https://tudominio.com/assets/soundtoro-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: #000000;  /* por si el splash pisa el fondo */
+  }
+  
+  /* (Opcional) si reproduces media y no quieres marca de agua, la vacías */
+  .watermark {
+    background-image: none;
+  }
+  
+  /* (Opcional) color de la barra de progreso si vas a reproducir vídeo/audio */
+  .progressBar {
+    background-color: #FFB000;  /* tu acento naranja */
+  }
