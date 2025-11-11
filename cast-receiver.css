@@ -33,11 +33,9 @@
 .watermark {
   background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
   background-repeat: no-repeat;
-
-  /* centradito y discreto; puedes moverlo a una esquina si prefieres */
-  background-position: center center;
-  background-size: 18%;
-  opacity: 0.18;         /* baja opacidad para no molestar */
+  background-size: 20%;              /* tamaño del logo en reproducción */
+  background-position: right 5% center;  /* centrado vertical, margen derecho */
+  opacity: 0.22;                     /* ligeramente transparente */
 }
 
 /* Color corporativo para la barra de progreso (opcional) */
