@@ -11,7 +11,48 @@
   background-size: contain;
   background-color: #000000;
 }
+/* Fondo siempre negro */
+.background {
+  background-color: #000;
+  background-image: none;
+}
 
+/* Logo cuando el receiver está idle/splash */
+.logo,
+.splash {
+  background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* Controla el tamaño del logo en idle */
+  background-size: 40%; /* prueba 30–50% a tu gusto */
+  background-color: #000; /* por si la capa cubre todo */
+}
+
+/* Mantener el logo también durante reproducción (como marca de agua) */
+.watermark {
+  background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
+  background-repeat: no-repeat;
+
+  /* centradito y discreto; puedes moverlo a una esquina si prefieres */
+  background-position: center center;
+  background-size: 18%;
+  opacity: 0.18;         /* baja opacidad para no molestar */
+}
+
+/* Color corporativo para la barra de progreso (opcional) */
+.progressBar { background-color: #FFB000; }
+
+/* Ajustes finos según relación de aspecto del televisor */
+@media (min-aspect-ratio: 16/9) {
+  .logo, .splash { background-size: 35%; }
+  .watermark { background-size: 16%; }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .logo, .splash { background-size: 45%; }
+  .watermark { background-size: 20%; }
+}
 .watermark {
   background-image: none;
 }
