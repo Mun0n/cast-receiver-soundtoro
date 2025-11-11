@@ -1,39 +1,29 @@
 /* Fondo siempre negro */
-.background {
-  background-color: #000;
-  background-image: none;
+.background{
+  background:#000;
+  background-image:none;
 }
 
-/* Logo en idle/splash (cuando no hay media) */
-.logo,
-.splash {
-  background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 38%;   /* ajusta a tu gusto */
-  background-color: #000;
+/* Logo en idle */
+.logo,.splash{
+  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:38%;
+  background-color:#000;
 }
 
-/* --- LOGO SOLO EN REPRODUCCIÓN DE AUDIO --- */
-.audio .background {
-  background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
-  background-repeat: no-repeat;
-  background-position: right 5% center;  /* a la derecha, centrado vertical */
-  background-size: 18%;                  /* prueba 15–22% */
-  /* que no interfiera con clics ni overlays */
-  pointer-events: none;
+/* --- LOGO DURANTE REPRODUCCIÓN (watermark) --- */
+/* Forzamos que exista y se vea, colocado a la derecha */
+.watermark{
+  display:block !important;                 /* por si viene oculto */
+  background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:right 5% center !important;  /* derecha, centrado vertical */
+  background-size:18% !important;                  /* ajusta 15–22% a tu gusto */
+  opacity:.22 !important;                          /* discreto */
+  pointer-events:none;                             /* no interfiere con UI */
 }
 
-/* Evita que aparezca algo heredado como watermark viejo */
-.watermark { background-image: none !important; }
-
-/* Color de la barra de progreso (opcional) */
-.progressBar { background-color: #FFB000; }
-
-/* Ajustes por relación de aspecto (opcional) */
-@media (max-aspect-ratio: 16/9) {
-  .audio .background { background-size: 22%; }
-}
-@media (min-aspect-ratio: 21/9) {
-  .audio .background { background-size: 15%; }
-}
+/* Color de progreso */
+.progressBar{ background-color:#FFB000; }
