@@ -26,7 +26,7 @@
 .audio.player-state-buffering .watermark{
   background-image:url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png") !important;
   background-repeat:no-repeat !important;
-  background-size:57px 57px !important;         /* ajusta si lo quieres más grande */
+  background-size:114px 114px !important;         /* ajusta si lo quieres más grande */
   background-position:right 5% center !important;/* derecha, centrado vertical */
   opacity:.22 !important;
   pointer-events:none;
