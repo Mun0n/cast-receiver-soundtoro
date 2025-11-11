@@ -1,60 +1,39 @@
-.background {
-  background-color: #000000;
-  background-image: none;
-}
-
-.logo,
-.splash {
-  background-image: url("./assets/logo_chromecast.png"); 
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  background-color: #000000;
-}
 /* Fondo siempre negro */
 .background {
   background-color: #000;
   background-image: none;
 }
 
-/* Logo cuando el receiver está idle/splash */
+/* Logo en idle/splash (cuando no hay media) */
 .logo,
 .splash {
   background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
   background-repeat: no-repeat;
   background-position: center center;
-
-  /* Controla el tamaño del logo en idle */
-  background-size: 40%; /* prueba 30–50% a tu gusto */
-  background-color: #000; /* por si la capa cubre todo */
+  background-size: 38%;   /* ajusta a tu gusto */
+  background-color: #000;
 }
 
-/* Mantener el logo también durante reproducción (como marca de agua) */
-.watermark {
+/* --- LOGO SOLO EN REPRODUCCIÓN DE AUDIO --- */
+.audio .background {
   background-image: url("https://mun0n.github.io/cast-receiver-soundtoro/assets/logo.png");
   background-repeat: no-repeat;
-  background-size: 20%;              /* tamaño del logo en reproducción */
-  background-position: right 5% center;  /* centrado vertical, margen derecho */
-  opacity: 0.22;                     /* ligeramente transparente */
+  background-position: right 5% center;  /* a la derecha, centrado vertical */
+  background-size: 18%;                  /* prueba 15–22% */
+  /* que no interfiera con clics ni overlays */
+  pointer-events: none;
 }
 
-/* Color corporativo para la barra de progreso (opcional) */
+/* Evita que aparezca algo heredado como watermark viejo */
+.watermark { background-image: none !important; }
+
+/* Color de la barra de progreso (opcional) */
 .progressBar { background-color: #FFB000; }
 
-/* Ajustes finos según relación de aspecto del televisor */
-@media (min-aspect-ratio: 16/9) {
-  .logo, .splash { background-size: 35%; }
-  .watermark { background-size: 16%; }
-}
-
+/* Ajustes por relación de aspecto (opcional) */
 @media (max-aspect-ratio: 16/9) {
-  .logo, .splash { background-size: 45%; }
-  .watermark { background-size: 20%; }
+  .audio .background { background-size: 22%; }
 }
-.watermark {
-  background-image: none;
-}
-
-.progressBar {
-  background-color: #FFB000;
+@media (min-aspect-ratio: 21/9) {
+  .audio .background { background-size: 15%; }
 }
